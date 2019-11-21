@@ -50,7 +50,11 @@ module.exports = {
         url: 'http://localhost:3000',
         default: true,
         vuex: {
-          mutations: [{ progress: 'examples/SET_PROGRESS' }],
+          mutations: [
+            { progress: 'examples/SET_PROGRESS' },
+            { connect: 'socket/onConnect' },
+            { disconnect: 'socket/onDisconnect' }
+          ],
           actions: [{ chatMessage: 'FORMAT_MESSAGE' }],
           emitBacks: ['examples/sample', { 'examples/sample2': 'sample2' }]
         }
